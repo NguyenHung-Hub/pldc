@@ -1259,7 +1259,7 @@ export const questions = [
             c: "c) Các chủ thể pháp luật tiến hành những hoạt động mà pháp luật không cấm. ",
             d: "d) Các chủ thể pháp luật kiềm chế không tiến hành những họat động mà pháp luật ngăn cấm. ",
         },
-        correct: "a",
+        correct: "c",
     },
 
     {
