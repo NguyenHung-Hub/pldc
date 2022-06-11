@@ -2,6 +2,8 @@
 
 :root {
     --bg: #282a36;
+    /* --bg-answer: rgb(139, 139, 139); */
+    /* --bg-answer: rgb(47, 165, 59); */
     --white: #f8f8f2;
 }
 
@@ -120,14 +122,20 @@ body {
         font-size: 2rem;
     }
     .answers-box {
-        display: grid;
-        grid-template-columns: 50% 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        /* grid-template-columns: 50% 50%; */
+        flex-direction: column;
     }
 
     .answer-item {
+        width: 90%;
         padding: 1rem;
-        margin: 0.5rem;
-        min-height: 10rem;
+        margin: 1rem 0.5rem;
+        min-height: 6rem;
 
         font-size: 1.8rem;
     }

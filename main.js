@@ -113,6 +113,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         let temp = questions[i].correct.toUpperCase();
         console.log(temp);
         document.querySelector(`.answer-${temp}`).style.backgroundColor =
-            "#50fa7b";
+            "rgb(47, 165, 59)";
     }
 });
