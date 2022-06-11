@@ -2231,7 +2231,7 @@ export const questions = [
             c: "c) Nam, nữ từ 20 tuổi trở lên",
             d: "d) Nam từ đủ 20 tuổi; nữ từ đủ 18 tuổi",
         },
-        correct: "a",
+        correct: "d",
     },
     {
         question:
