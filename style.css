@@ -82,7 +82,8 @@ body {
 .next-btn {
     position: absolute;
     right: 2rem;
-    bottom: -4rem;
+    bottom: -8rem;
+
     padding: 1rem 2rem;
     font-size: 2rem;
     color: #282a36;
@@ -109,19 +110,25 @@ body {
     }
 
     .questions-box {
-        padding: 4rem 6rem;
-        width: 90%;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        width: 96%;
         min-height: 14rem;
 
         margin: 1.6rem 0;
-        font-size: 2.4rem;
-        font-weight: 600;
-        background-color: var(--bg);
-
-        border-radius: 1.6rem;
+        font-size: 2rem;
     }
     .answers-box {
         display: grid;
         grid-template-columns: 50% 50%;
+    }
+
+    .answer-item {
+        padding: 1rem;
+        margin: 0.5rem;
+        min-height: 10rem;
+
+        font-size: 1.8rem;
     }
 }
