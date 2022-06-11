@@ -33,12 +33,14 @@ body {
 
 .info {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .index-question,
 #select {
     padding: 0.8rem 1rem;
-    margin: 0.8rem;
+    margin: 0.8rem 2rem;
 
     font-family: "Roboto", sans-serif;
     font-weight: bold;
@@ -55,11 +57,12 @@ body {
 .answer-file {
     display: block;
     padding: 0.4rem 1.6rem;
-    margin: 0 4rem;
+    margin: 0 2rem;
     font-weight: bold;
-    font-size: 2.2rem;
+    font-size: 2rem;
     text-decoration: none;
     border-radius: 0.8rem;
+    border: 1px solid #ccc;
 }
 
 .wrapper {
