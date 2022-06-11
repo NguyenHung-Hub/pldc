@@ -17,6 +17,7 @@ html {
 }
 body {
     font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
 }
 .main {
     display: flex;
@@ -30,7 +31,11 @@ body {
     background: var(--white);
 }
 
-.info,
+.info {
+    display: flex;
+}
+
+.index-question,
 #select {
     padding: 0.8rem 1rem;
     margin: 0.8rem;
@@ -45,6 +50,16 @@ body {
 #select {
     font-size: 2rem;
     cursor: pointer;
+}
+
+.answer-file {
+    display: block;
+    padding: 0.4rem 1.6rem;
+    margin: 0 4rem;
+    font-weight: bold;
+    font-size: 2.2rem;
+    text-decoration: none;
+    border-radius: 0.8rem;
 }
 
 .wrapper {

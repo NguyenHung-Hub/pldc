@@ -649,7 +649,7 @@ export const questions = [
             c: "c) 4",
             d: "d) 5",
         },
-        correct: "b",
+        correct: "c",
     },
     {
         question: "61. Tính cưỡng chế của pháp luật được thể hiện:",
@@ -1248,7 +1248,7 @@ export const questions = [
             c: "c) Các chủ thể pháp luật kiềm chế không tiến hành những họat động mà pháp luật ngăn cấm.",
             d: "d) Các chủ thể pháp luật thực hiện quyền chủ thể của mình do pháp luật quy định. ",
         },
-        correct: "a",
+        correct: "d",
     },
     {
         question:
