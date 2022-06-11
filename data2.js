@@ -415,7 +415,7 @@ export const questions = [
             c: "c) Cơ quan quyền lực, cơ quan quản lý nhà nước, cơ quan xét xử, cơ quan kiểm sát",
             d: "d) Cả A, B, C đều đúng",
         },
-        correct: "c",
+        correct: "a",
     },
 
     {
