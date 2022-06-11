@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
 
         document.querySelector(
-            ".info"
+            ".index-question"
         ).innerText = `Câu số ${indexQuestion}/${questionNumber}`;
 
         reset();
