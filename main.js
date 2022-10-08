@@ -1,4 +1,4 @@
-import { questions } from "./data2.js";
+import { chapter1 as questions } from "./data/chapter1.js";
 
 window.addEventListener("DOMContentLoaded", (event) => {
     let answerItem = document.querySelectorAll(".answer-item");
@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     function reset() {
         document
             .querySelectorAll(".answer-item")
-            .forEach((ele) => (ele.style.backgroundColor = "#282a36"));
+            .forEach((ele) => (ele.style.backgroundColor = "#eee"));
         isChoose = false;
     }
 
@@ -106,13 +106,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
         if (isChoose) {
             alert("Bạn đã chọn rồi !!! Hãy bấm Next");
         } else {
-            item.style.backgroundColor = "#6272a4";
+            item.style.backgroundColor = "#9BBBD5";
             isChoose = true;
         }
 
         let temp = questions[i].correct.toUpperCase();
         console.log(temp);
         document.querySelector(`.answer-${temp}`).style.backgroundColor =
-            "rgb(47, 165, 59)";
+            "#56D956";
     }
 });

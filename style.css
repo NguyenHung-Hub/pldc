@@ -45,12 +45,14 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     border: 1px solid #ccc;
+    background: none;
 
     border-radius: 0.8rem;
 }
 
 #select {
-    font-size: 2rem;
+    padding-right: 8px;
+    font-size: 1.6rem;
     cursor: pointer;
 }
 
@@ -67,34 +69,45 @@ body {
 
 .wrapper {
     position: relative;
+    width: 70%;
     font-family: "Roboto", sans-serif;
     color: var(--white);
 }
 
 .questions-box {
-    padding: 4rem 6rem;
-    width: 100rem;
-    min-height: 14rem;
+    width: 100%;
+    padding: 2rem 4rem;
 
     margin: 1.6rem 0;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 600;
-    background-color: var(--bg);
+    color: rgb(75, 75, 75);
+    border: 1px solid rgb(75, 75, 75);
 
     border-radius: 1.6rem;
 }
 .answers-box {
+    width: 100%;
     display: grid;
-    grid-template-columns: 50rem 50rem;
+    gap: 16px;
+    /* row-gap: 4%;
+    column-gap: 2%; */
+
+    grid-template-columns: calc(50% - 8px) calc(50% - 8px);
 }
 .answer-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
     padding: 2rem;
-    margin: 2rem 1.6rem;
-    min-height: 12rem;
+    /* margin: 2rem 1.6rem;
+    min-height: 12rem; */
 
     font-size: 2rem;
 
-    background-color: var(--bg);
+    color: #000;
+    background: #eee;
     border-radius: 1.6rem;
     cursor: pointer;
 }
@@ -113,7 +126,7 @@ body {
     font-weight: bold;
     border-radius: 0.8rem;
 
-    background-color: green;
+    background-color: rgb(86, 217, 86);
     cursor: pointer;
 }
 
@@ -127,34 +140,24 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        width: 90%;
     }
 
     .questions-box {
         display: flex;
         align-items: center;
-        padding: 0.5rem 1rem;
-        width: 96%;
-        min-height: 14rem;
+        padding: 1.6rem;
 
         margin: 1.6rem 0;
         font-size: 2rem;
     }
     .answers-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 100%;
-
-        /* grid-template-columns: 50% 50%; */
-        flex-direction: column;
+        gap: 10px;
+        grid-template-columns: auto;
     }
 
     .answer-item {
-        width: 90%;
-        padding: 1rem;
-        margin: 1rem 0.5rem;
-        min-height: 6rem;
-
         font-size: 1.8rem;
     }
 }
