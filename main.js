@@ -1,9 +1,15 @@
-import { chapter1 as questions } from "./data/chapter1.js";
+import { chapter1 } from "./data/chapter1.js";
+import { chapter2 } from "./data/chapter2.js";
+import { chapter3 } from "./data/chapter3.js";
+import { chapter4 } from "./data/chapter4.js";
 
+let questions = [...chapter1];
 window.addEventListener("DOMContentLoaded", (event) => {
     let answerItem = document.querySelectorAll(".answer-item");
     const questionsBox = document.querySelector(".questions-box");
     let select = document.querySelector("#select");
+    let selectChapter = document.querySelector("#select-chapter");
+    let selectMode = document.querySelector("#select-mode");
 
     const answersA = document.querySelector(".answer-A");
     const answersB = document.querySelector(".answer-B");
@@ -16,20 +22,102 @@ window.addEventListener("DOMContentLoaded", (event) => {
     let arrQuestions = [];
     let isChoose = false;
     let questionNumber = eval(select.value);
+    let isSort = selectMode.value === "sequence" ? true : false;
+
+    // select.
 
     function init() {
-        arrQuestions = randomInteger(questionNumber);
+        if (questionNumber == questions.length) {
+            console.log("max length");
+            arrQuestions = Array.from(Array(questions.length - 1).keys());
+            if (isSort == false) {
+                arrQuestions = arrQuestions.sort(() => Math.random() - 0.5);
+            }
+        } else {
+            arrQuestions = randomInteger(questionNumber, isSort);
+        }
         renderQuestion(questions[arrQuestions[0]]);
     }
     init();
 
     select.addEventListener("change", () => {
         questionNumber = eval(select.value);
-        console.log(questionNumber);
+        // console.log(questionNumber);
         indexQuestion = 1;
         document.querySelector(
             ".index-question"
         ).innerText = `Câu số ${indexQuestion}/${questionNumber}`;
+        init();
+    });
+
+    selectChapter.addEventListener("change", () => {
+        switch (selectChapter.value) {
+            case "all": {
+                questions = [
+                    ...chapter1,
+                    ...chapter2,
+                    ...chapter3,
+                    ...chapter4,
+                ];
+                select.innerHTML = `
+                    <option value="10">10 câu</option>
+                    <option value="20">20 câu</option>
+                    <option value="40">40 câu</option>
+                    <option value="60">60 câu</option>
+                    <option value="100">100 câu</option>
+                    <option value="142">All-142</option>
+                    `;
+                break;
+            }
+
+            case "1": {
+                questions = [...chapter1];
+                select.innerHTML = `
+                    <option value="10">10 câu</option>
+                    <option value="${chapter1.length}">${chapter1.length} câu</option>
+                `;
+                break;
+            }
+            case "2": {
+                questions = [...chapter2];
+                select.innerHTML = `
+                    <option value="10">10 câu</option>
+                    <option value="${chapter2.length}">${chapter2.length} câu</option>
+                `;
+                break;
+            }
+            case "3": {
+                questions = [...chapter3];
+                select.innerHTML = `
+                    <option value="10">10 câu</option>
+                    <option value="${chapter3.length}">${chapter3.length} câu</option>
+                `;
+                break;
+            }
+            case "4": {
+                questions = [...chapter4];
+                select.innerHTML = `
+                    <option value="10">10 câu</option>
+                    <option value="${chapter4.length}">${chapter4.length} câu</option>
+                `;
+                break;
+            }
+
+            default: {
+                questions = [...chapter1];
+                select.innerHTML = `
+                    <option value="10">10 câu</option>
+                    <option value="${chapter1.length}">${chapter1.length} câu</option>
+                `;
+                break;
+            }
+        }
+
+        init();
+    });
+    selectMode.addEventListener("change", () => {
+        isSort = selectMode.value === "sequence" ? true : false;
+        console.log({ isSort });
         init();
     });
 
@@ -46,12 +134,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
         } else {
             let i = arrQuestions[indexQuestion++];
             renderQuestion(questions[i]);
+
+            document.querySelector(
+                ".index-question"
+            ).innerText = `Câu số ${indexQuestion}/${questionNumber}`;
+            // document.querySelector(
+            //     ".index-chapter"
+            // ).innerText = `Chương ${questions[i].chapter}`;
         }
-
-        document.querySelector(
-            ".index-question"
-        ).innerText = `Câu số ${indexQuestion}/${questionNumber}`;
-
         reset();
     });
 
@@ -62,7 +152,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         isChoose = false;
     }
 
-    function randomInteger(size) {
+    function randomInteger(size, isSort) {
         const arrInt = [];
         let rndInt = Math.floor(Math.random() * questions.length) + 0;
         arrInt.push(rndInt);
@@ -73,9 +163,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
             } while (arrInt.includes(rndInt));
             arrInt.push(rndInt);
         }
-        arrInt.sort(function (a, b) {
-            return a - b;
-        });
+        if (isSort) {
+            arrInt.sort(function (a, b) {
+                return a - b;
+            });
+        }
 
         console.log({ arrInt });
 
@@ -83,7 +175,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
 
     function renderQuestion(question) {
-        questionsBox.innerText = `${question.question}`;
+        questionsBox.innerText = `Chương ${question.chapter} - ${question.question}`;
 
         answersA.innerText = " " + (question.answer.a || "null");
         answersB.innerText = " " + (question.answer.b || "null");
