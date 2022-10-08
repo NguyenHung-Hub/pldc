@@ -72,7 +72,7 @@ export const chapter1 = [
             b: `b.	Từ chế độ phong kiến thuần túy chuyển sang phong kiến nửa thuộc địa`,
             c: `c.	Từ một nước phong kiến độc lập, tự chủ chuyển thành một nước thuộc địa`,
         },
-        correct: "",
+        correct: "b",
         chapter: 1,
     },
     {
@@ -127,7 +127,7 @@ export const chapter1 = [
             c: `c.	Cần Vương (1885-1896)`,
             d: `d.	Yên Bái (2/1930)`,
         },
-        correct: "",
+        correct: "b",
         chapter: 1,
     },
     {
@@ -411,7 +411,7 @@ export const chapter1 = [
             c: `c.	Lực lượng cách mạng`,
             d: `d.	Mục tiêu của cách mạng`,
         },
-        correct: "",
+        correct: "c",
         chapter: 1,
     },
     {
@@ -422,7 +422,7 @@ export const chapter1 = [
             c: `c.	Ban Chấp hành Trung Ương Đảng`,
             d: `d.	Giai cấp công nhân`,
         },
-        correct: "",
+        correct: "d",
         chapter: 1,
     },
     {
@@ -433,7 +433,7 @@ export const chapter1 = [
             c: `c.	Công nhân, nông dân, phần tử lao khổ đô thị`,
             d: `d.	Toàn dân (trừ lực lượng phản động)`,
         },
-        correct: "",
+        correct: "d",
         chapter: 1,
     },
 ];
