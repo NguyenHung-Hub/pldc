@@ -32,13 +32,12 @@ body {
 }
 
 .info {
-    display: flex;
-    /* flex-direction: column; */
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 
-    /* display: grid;
-    grid-template-columns: auto auto; */
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .index-question,
