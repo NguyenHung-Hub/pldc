@@ -94,7 +94,7 @@ export const chapter1 = [
             c: `c.	Công nhân và tư sản`,
             d: `d.	Nhân dân Việt Nam và Đế quốc Pháp`,
         },
-        correct: "b",
+        correct: "d",
         chapter: 1,
     },
     {

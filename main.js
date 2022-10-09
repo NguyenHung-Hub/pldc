@@ -27,8 +27,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     // select.
 
     function init() {
-        if (questionNumber == questions.length) {
-            console.log("max length");
+        if (questionNumber > 100) {
             arrQuestions = Array.from(Array(questions.length - 1).keys());
             if (isSort == false) {
                 arrQuestions = arrQuestions.sort(() => Math.random() - 0.5);
@@ -37,12 +36,22 @@ window.addEventListener("DOMContentLoaded", (event) => {
             arrQuestions = randomInteger(questionNumber, isSort);
         }
         renderQuestion(questions[arrQuestions[0]]);
+
+        console.log(arrQuestions);
+        console.log({
+            number: select.value,
+            chapter: selectChapter.value,
+            mode: selectMode.value,
+            total: questions.length,
+            isSort,
+            questionNumber,
+            isChoose,
+        });
     }
     init();
 
     select.addEventListener("change", () => {
         questionNumber = eval(select.value);
-        // console.log(questionNumber);
         indexQuestion = 1;
         document.querySelector(
             ".index-question"
@@ -117,7 +126,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
     selectMode.addEventListener("change", () => {
         isSort = selectMode.value === "sequence" ? true : false;
-        console.log({ isSort });
         init();
     });
 
@@ -169,8 +177,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
             });
         }
 
-        console.log({ arrInt });
-
         return arrInt;
     }
 
@@ -203,7 +209,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
 
         let temp = questions[i].correct.toUpperCase();
-        console.log(temp);
         document.querySelector(`.answer-${temp}`).style.backgroundColor =
             "#56D956";
     }

@@ -33,9 +33,12 @@ body {
 
 .info {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+
+    /* display: grid;
+    grid-template-columns: auto auto; */
 }
 
 .index-question,

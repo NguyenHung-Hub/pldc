@@ -162,7 +162,7 @@ export const chapter2 = [
             c: `c.	HNTW 7 ( 11-1940)`,
             d: `d.	HNTW 8 (5-1941)`,
         },
-        correct: "b",
+        correct: "d",
         chapter: 2,
     },
     {
@@ -382,7 +382,7 @@ export const chapter2 = [
             c: `c.	Tự do, dân chủ, cơm áo, hoà bình`,
             d: `d.	Cả a,b,c đều sai`,
         },
-        correct: "d",
+        correct: "b",
         chapter: 2,
     },
     {
