@@ -3,7 +3,7 @@ import { chapter2 } from "./data/chapter2.js";
 import { chapter3 } from "./data/chapter3.js";
 import { chapter4 } from "./data/chapter4.js";
 
-let questions = [...chapter1];
+let questions = [...chapter1, ...chapter2, ...chapter3, ...chapter4];
 window.addEventListener("DOMContentLoaded", (event) => {
     let answerItem = document.querySelectorAll(".answer-item");
     const questionsBox = document.querySelector(".questions-box");
@@ -139,6 +139,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             alert(
                 `Đã trả lời hết ${arrQuestions.length} câu hỏi.\n Chọn lại số câu hỏi khác hoặc reload trang`
             );
+            window.location.reload();
         } else {
             let i = arrQuestions[indexQuestion++];
             renderQuestion(questions[i]);
